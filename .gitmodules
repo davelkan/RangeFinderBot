@@ -1,0 +1,3 @@
+[submodule "simple_gui"]
+	path = simple_gui
+	url = git@github.com:davelkan/simple_gui.git
