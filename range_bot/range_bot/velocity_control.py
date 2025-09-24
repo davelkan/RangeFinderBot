@@ -84,7 +84,7 @@ class RangeBot(Node):
             self._rf_queue.clear()
 
         distance = data.distance
-        # Accept distance if queue is emtpy
+        # Accept distance if queue is empty
         if not self._rf_queue:
             self.current_distance = distance
 
@@ -188,6 +188,7 @@ class RangeBot(Node):
             # Construct and publish telemetry update
             telemetry = TelemetryStamped()
             telemetry.header.stamp = current_stamp.to_msg()
+            telemetry.header.frame_id = "range_bot"
             telemetry.velocity = self.current_velocity
             telemetry.velocity_setpoint = velocity_setpoint
             telemetry.rangefinder_distance = current_distance
