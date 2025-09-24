@@ -20,7 +20,7 @@ Note: There may be a version issue with tests, installing the correct version of
 This should open up a small HMI as shown below:
 
 <p align="center">
-    <img src="simple_gui/res/demo.png" width="600" height="332">
+    <img src="range_bot/res/demo.png" width="600" height="332">
 </p>
 
 
