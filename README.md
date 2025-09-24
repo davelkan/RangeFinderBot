@@ -46,5 +46,9 @@ increased in case of Estop
 - messages leveraged by range_bot and simple_gui
 
 ### simple_gui - forked from https://github.com/sampreets3/simple_gui with minor changes to serve as a gui for range_bot
-- Reports telemetry and allows user to send custom range finder readings or activate/deactivate the estop to see the results
+Reports telemetry and allows user to send custom range finder readings or activate/deactivate the estop to see the results
+- Telemetry
+Velocity Setpoint, Current Velocity, State, and Current Rangefinder distance
+- Controls
+Publish a new rangefinder reading, activate/deactivate Estop
 ---
