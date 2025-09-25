@@ -109,21 +109,21 @@ class StateMachine:
             if self._state == BotState.ESTOPPED:
                 return
 
+            # Default to current state
+            desired_state = self._state
+
             # Not Estopped, transition logic will depend on current state due to hysteresis.
             if self._state == BotState.STOP:
                 # STOP has hysteresis only when switching to SLOW
                 if distance > self._slow_distance:
-                    # No hysteresis between STOP and FULL_SPEED as they are not adjacent
                     desired_state = BotState.FULL_SPEED
                 elif distance > self._stop_distance + self._mode_hysteresis:
-                    # Hysteresis implemented to prevent rapid cycling
                     desired_state = BotState.SLOW
                 else:
                     desired_state = BotState.STOP
             elif self._state == BotState.SLOW:
                 # SLOW has a hysteresis on transitions to STOP and to FULL_SPEED
                 if distance < self._stop_distance - self._mode_hysteresis:
-                    # Hysteresis implemented to prevent rapid cycling
                     desired_state = BotState.STOP
                 elif distance > self._slow_distance + self._mode_hysteresis:
                     desired_state = BotState.FULL_SPEED

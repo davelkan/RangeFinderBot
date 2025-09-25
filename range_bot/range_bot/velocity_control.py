@@ -53,10 +53,9 @@ class RangeBot(Node):
         self._queue_len = 10  # Outlier rejection queue length
         self._rejection_count = 0  # Number of outliers rejected in sequence
         self._rf_queue = deque(maxlen=self._queue_len)  # rangefinder data for outlier rejection
-        self.update_rate = update_rate  # Rate in Hz to update the state machine and velocity
         self._last_stamp = self.get_clock().now()  # Last time the update function ran.
         # Implement a timer to call the update function at the specified rate
-        self.timer = self.create_timer(1.0 / self.update_rate, self.update)
+        self.timer = self.create_timer(1.0 / update_rate, self.update)
         self.estop_subscriber = self.create_subscription(
             EstopStamped, "estop", self.estop_callback, 10
         )
@@ -111,7 +110,7 @@ class RangeBot(Node):
         """
         Callback function for emergency stop. This function should be called whenever the estop
         state changes. Immediately activates or deactivates the estop in the state machine and
-        triggers
+        triggers an update to minimize estop lag.
         Args:
             data (EstopStamped): True to activate Estop, False to deactivate Estop.
         """
