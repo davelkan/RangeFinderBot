@@ -12,10 +12,10 @@ The code has been tested to function with ROS 2 Humble Hawksbill.
 2. Install the necessary dependencies of the for the GUI: `pip3 install pyqt5`
 3. Build the package at the root of your workspace: `colcon build`
 4. Source the setup file from the root of your workspace: `source install/setup.bash`
-5. Start the velocity_controller `ros2 run range_bot velocity_controller`
-6. In a second terminal start the GUI `ros2 run simple_gui ros2_hmi_node`
+5. Start the velocity_controller and gui `ros2 launch range_bot velocity_controller`
 Note: There may be a version issue with tests, installing the correct version of setuptools should fix this
 `pip3 install setuptools==58.2.0`
+Note2: To close everything smoothly you will need to manually exit the GUI
 
 This should open up a small HMI as shown below:
 

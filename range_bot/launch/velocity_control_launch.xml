@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <node pkg="range_bot" exec="velocity_control" name="velocity_control"/>
+  <node pkg="simple_gui" exec="ros2_hmi_node" name="ros2_hmi_node"/>
+</launch>
