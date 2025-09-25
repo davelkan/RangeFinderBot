@@ -61,4 +61,8 @@ Publish a new rangefinder reading, activate/deactivate Estop
     <img src="range_bot/res/basic_architecture.png" width="600" height="332">
 </p>
 
+
+### Code Generation Notes
+Github copilot was used within VSCode, primarily for comments and styling
+
 ---
