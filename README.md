@@ -51,4 +51,11 @@ Reports telemetry and allows user to send custom range finder readings or activa
 Velocity Setpoint, Current Velocity, State, and Current Rangefinder distance
 - Controls
 Publish a new rangefinder reading, activate/deactivate Estop
+
+## Basic Architecture Diagram
+
+<p align="center">
+    <img src="range_bot/res/basic_architecture.png" width="600" height="332">
+</p>
+
 ---
