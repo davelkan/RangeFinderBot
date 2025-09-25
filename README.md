@@ -13,6 +13,7 @@ The code has been tested to function with ROS 2 Humble Hawksbill.
 3. Build the package at the root of your workspace: `colcon build`
 4. Source the setup file from the root of your workspace: `source install/setup.bash`
 5. Start the velocity_controller and gui `ros2 launch range_bot velocity_controller`
+6. Try out the controls and see how the telemetry responds
 Note: There may be a version issue with tests, installing the correct version of setuptools should fix this
 `pip3 install setuptools==58.2.0`
 Note2: To close everything smoothly you will need to manually exit the GUI
