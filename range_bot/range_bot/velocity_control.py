@@ -116,8 +116,7 @@ class RangeBot(Node):
             data (EstopStamped): True to activate Estop, False to deactivate Estop.
         """
         with self._lock:
-            estopped = data.estop_active
-            if estopped:
+            if data.estop_active:
                 self.state_machine.activate_estop()
             else:
                 # When deactivating estop, provide a distance to determine the next state

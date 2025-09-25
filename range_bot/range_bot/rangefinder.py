@@ -11,7 +11,7 @@ class Rangefinder(Node):
         self,
     ):
         """
-        A simple rangefinder
+        A simple rangefinder, used for testing.
         """
         super().__init__("rangefinder")
         self.last_message = None
