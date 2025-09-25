@@ -9,11 +9,12 @@ The code has been tested to function with ROS 2 Humble Hawksbill.
 ## Usage Instruction
 
 1. Clone this repository in the root of your ROS2 workspace: `git clone --recurse-submodules --remote-submodules https://github.com/davelkan/RangeFinderBot/`
-2. Install the necessary dependencies of the for the GUI: `pip3 install pyqt5`
-3. Build the package at the root of your workspace: `colcon build`
-4. Source the setup file from the root of your workspace: `source install/setup.bash`
-5. Start the velocity_controller and gui `ros2 launch range_bot velocity_controller`
-6. Try out the controls and see how the telemetry responds
+2. Submodule won't default to correct branch, so `cd RangeFinderBot/simple_gui; git checkout rangebot_branch`
+3. Install the necessary dependencies of the for the GUI: `pip3 install pyqt5`
+4. Build the package at the root of your workspace: `colcon build`
+5. Source the setup file from the root of your workspace: `source install/setup.bash`
+6. Start the velocity_controller and gui `ros2 launch range_bot velocity_controller`
+7. Try out the controls and see how the telemetry responds
 
 Note: There may be a version issue with tests, installing the correct version of setuptools should fix this
 `pip3 install setuptools==58.2.0`
@@ -31,7 +32,7 @@ This should open up a small HMI as shown below:
 You'll find 3 packages inside this Repo
 
 ### range_bot 
-In here you'll find the core components of the challenge
+In here you'll find the core components of the challenge. By default the robot will be stopped below 400mm, slow between 400 and 800 mm, and full speed above 800 mm rangefinder distance.
 velocity_controller.py implements the primarylogics. It subscribes to an external estop and rangefinder, incroporating that data to determine the output
 speed and state of the bot. This data can be viewed by waching the /telemetry stream after launching the node. Some features include
 - rangefinder input with outlier rejection: A rolling queue of rangefinder data is maintained allow outlier rejection outside of 3-sigma of the current
