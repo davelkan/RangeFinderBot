@@ -120,6 +120,7 @@ class RangeBot(Node):
             else:
                 # When deactivating estop, provide a distance to determine the next state
                 self.state_machine.deactivate_estop(self.current_distance)
+            self.update()  # Immediately update to minimize estop lag
 
     def get_velocity_setpoint(self) -> float:
         """
